@@ -29,6 +29,9 @@ export default function EditorPage() {
                        })}
                 </div>
             </div>
+            <button>ROOM ID</button>
+            <button>Leave ROOM</button>
+
         </div>
 
         <div className="editorWrap" >
