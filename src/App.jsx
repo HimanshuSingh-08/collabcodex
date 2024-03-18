@@ -3,20 +3,28 @@ import Login from "./Components/Login"
 import Navbar from "./Components/Navbar"
 import EditorPage from "./Components/EditorPage"
 import HomePage from "./Components/HomePage.jsx"
+import { Toaster } from "react-hot-toast"
 
 function App() {
 
   return (
     <>
-    <HomePage/>
-      {/* <Navbar/>
+    <div>
+      <Toaster 
+      position="top-center"
+      />
+      
+    </div>
+    
+      {/* <Navbar/> */}
       <BrowserRouter>
        <Routes>
-          <Route path='/login' element={<Login/>} ></Route>
-          <Route path='/editor/:roomid' element={<EditorPage/>} ></Route>
+          <Route path="/" element={<HomePage/>} ></Route>
+          <Route path="/login" element={<Login/>} ></Route>
+          <Route path="/editor/:roomID" element={<EditorPage/>} ></Route>
 
        </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   )
 }
