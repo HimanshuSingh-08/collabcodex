@@ -1,43 +1,50 @@
 import { useState } from "react";
 import "./HomePage.css";
 
-import {v4} from 'uuid';
+import { v4 } from "uuid";
 import toast from "react-hot-toast";
 
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
-
   const navigate = useNavigate();
 
-  const [roomId , setroomId] = useState('');
-  const [username , setuserName] = useState('');
+  const [roomId, setroomId] = useState("");
+  const [username, setuserName] = useState("");
 
-  const CreateNewRoom = (e)=>{
-      // to stop the default 
-      e.preventDefault();
-      const id = v4();
-      setroomId(id);
-      toast.success('Joining room Id Created !!');
-  }
+  const CreateNewRoom = (e) => {
+    // to stop the default
+    e.preventDefault();
+    const id = v4();
+    setroomId(id);
+    toast.success("Joining room Id Created !!");
+  };
 
-  const joinRoom = () =>{
-      //check if valid user or name input
-      if(!roomId || ! username){
-        console.log(roomId);
-        toast.error('Invalid username or roomId');
-        return;
-      }
+  const joinRoom = () => {
+    //check if valid user or name input
+    if (!roomId || !username) {
       console.log(roomId);
-      navigate(`/editor/${roomId}`,{
-        
-        state :{
-          username
-        }
-      });
+      toast.error("Invalid username or roomId");
+      return;
+    }
+    console.log(roomId);
+    navigate(`/editor/${roomId}`, {
+      state: {
+        username,
+      },
+    });
+  };
+
+  // add feature to just hit enter and value get pushed.
+  const handleKeyEnter = (e) =>{
+    // with the help of e.code we can simple check the key strokes
+      // console.log('event ', e.code);
+
+      if(e.code === "Enter"){
+        joinRoom();
+      }
   }
 
-  
   return (
     <>
       <div className="homePageWrapper">
@@ -45,9 +52,25 @@ export default function HomePage() {
           <img className="homeImage" src="logo.jpg" alt="" />
           <h4 className="mainLabel">Paste the invitation Room ID </h4>
           <div className="inputGroup">
-            <input type="text" className="inputBox" placeholder="ROOM ID" value={roomId} onChange={(e)=>setroomId(e.target.value)} />
-            <input type="text" className="inputBox" placeholder="USERNAME" value={username} onChange={(e)=>setuserName(e.target.value)} />
-            <button className="btn joinbtn" onClick={joinRoom} >Join</button>
+            <input
+              type="text"
+              className="inputBox"
+              placeholder="ROOM ID"
+              value={roomId}
+              onChange={(e) => setroomId(e.target.value)}
+              onKeyUp={handleKeyEnter}
+            />
+            <input
+              type="text"
+              className="inputBox"
+              placeholder="USERNAME"
+              value={username}
+              onChange={(e) => setuserName(e.target.value)}
+              onKeyUp={handleKeyEnter}
+            />
+            <button className="btn joinbtn" onClick={joinRoom}>
+              Join
+            </button>
             <span className="createInfo">
               If you dont have invite then create &nbsp;
               <a onClick={CreateNewRoom} href="" className="createNewBtn">
@@ -56,12 +79,11 @@ export default function HomePage() {
             </span>
           </div>
         </div>
-       
+
         <footer>
-        <h4>Building for Web.</h4>
-      </footer>
+          <h4>Building for Web.</h4>
+        </footer>
       </div>
-     
     </>
   );
 }
