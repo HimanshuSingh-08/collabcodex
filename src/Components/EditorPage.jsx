@@ -1,6 +1,7 @@
 import { useState } from "react"
-
 import Client from "./Client"
+import './Editor.css';
+import Editor from "./Editor"
 
 export default function EditorPage() {
 
@@ -14,13 +15,11 @@ export default function EditorPage() {
 
   return (
     <>
-    <h1>this is the editor page </h1>
      <div className="mainWrapper" >
-      <h1>hello this is me </h1>
         <div className="aside" >
             <div className="asideInner" >
                 <div className="logo">
-                  <img className="logoImage"  src="logo.jpg" alt="logo" />
+                  <img className="logoImage"  src="code.png" alt=" " />
                 </div>
                 <h3>Connected</h3>
                 <div className="clientsList" >
@@ -29,13 +28,13 @@ export default function EditorPage() {
                        })}
                 </div>
             </div>
-            <button>ROOM ID</button>
-            <button>Leave ROOM</button>
+            <button className="copybtn btn" > Copy ROOM ID</button>
+            <button className="leavebtn btn" >Leave ROOM</button>
 
         </div>
 
-        <div className="editorWrap" >
-          editor Goes here..
+        <div className="editorWrapper" >
+          <Editor/>
         </div>
 
      </div>
