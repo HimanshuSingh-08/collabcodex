@@ -34,8 +34,15 @@ footer a {
 }
 
 .homePageLogo {
-    height: 80px;
+    height: 120px;
+    width: 220px;
     margin-bottom: 30px;
+    border-radius: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+
 }
 
 .inputBox {
@@ -123,12 +130,16 @@ footer a:hover {
 }
 
 .logo {
+  
     border-bottom: 1px solid #424242;
     padding-bottom: 10px;
 }
 
 .logoImage {
-    height: 60px;
+    height: 100px;
+    width: 200px;
+    border-radius: 5%;
+    text-align: center;
 }
 
 .leaveBtn {
@@ -136,7 +147,7 @@ footer a:hover {
     margin-top: 20px;
 }
 .CodeMirror {
-    min-height: calc(100vh - 20px);
+    min-height: calc(100vh - 50px);
     font-size: 20px;
     line-height: 1.6;
     padding-top: 20px;

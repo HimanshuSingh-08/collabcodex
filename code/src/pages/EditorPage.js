@@ -98,7 +98,7 @@ const EditorPage = () => {
                     <div className="logo">
                         <img
                             className="logoImage"
-                            src="/code-sync.png"
+                            src="/collab.jpg"
                             alt="logo"
                         />
                     </div>
@@ -127,6 +127,10 @@ const EditorPage = () => {
                         codeRef.current = code;
                     }}
                 />
+                <div>
+                    <button>Share Code</button>
+                    <button>Compile Code</button>
+                </div>
             </div>
         </div>
     );

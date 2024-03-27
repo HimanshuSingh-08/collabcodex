@@ -77,7 +77,7 @@ const Home = () => {
             </div>
             <footer>
                 <h4>
-                    Build For Web .
+                    Build For Web ❤️ make the coding simple and easy .
                 </h4>
             </footer>
         </div>
