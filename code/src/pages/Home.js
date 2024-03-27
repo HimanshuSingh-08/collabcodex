@@ -39,7 +39,7 @@ const Home = () => {
             <div className="formWrapper">
                 <img
                     className="homePageLogo"
-                    src="/code-sync.png"
+                    src="/collab.jpg"
                     alt="code-sync-logo"
                 />
                 <h4 className="mainLabel">Paste invitation ROOM ID</h4>
@@ -67,7 +67,7 @@ const Home = () => {
                         If you don't have an invite then create &nbsp;
                         <a
                             onClick={createNewRoom}
-                            href=""
+                            href=" "
                             className="createNewBtn"
                         >
                             new room
@@ -77,8 +77,7 @@ const Home = () => {
             </div>
             <footer>
                 <h4>
-                    Built with 💛 &nbsp; by &nbsp;
-                    <a href="https://github.com/codersgyan">Coder's Gyan</a>
+                    Build For Web .
                 </h4>
             </footer>
         </div>
