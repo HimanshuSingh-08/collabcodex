@@ -128,8 +128,10 @@ const EditorPage = () => {
                     }}
                 />
                 <div>
-                    <button>Share Code</button>
-                    <button>Compile Code</button>
+                     <center>
+                       <button className='btn'>Share Code</button>
+                       <button className='btn'> Compile Code</button>
+                     </center>
                 </div>
             </div>
         </div>

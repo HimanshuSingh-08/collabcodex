@@ -13,11 +13,18 @@ app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+// To store the socketId and roomID
 const userSocketMap = {};
+
+// To get all the clients connected to the specific roomID.
+
 function getAllConnectedClients(roomId) {
     // Map
+    // it will be an array of all the connected sockets connected to an roomID
     return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map(
         (socketId) => {
+            // this will return the socket id and the username of the corresponding sockedID
+            // which we are getting from the userSocketmap.
             return {
                 socketId,
                 username: userSocketMap[socketId],
