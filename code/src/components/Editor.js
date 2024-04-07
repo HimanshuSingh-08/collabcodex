@@ -21,6 +21,8 @@ const Editor = ({ socketRef, roomId, onCodeChange }) => {
                     lineNumbers: true,
                 }
             );
+// Here function is helping to share the code changes on the frontend side.
+//
 
             editorRef.current.on('change', (instance, changes) => {
                 const { origin } = changes;

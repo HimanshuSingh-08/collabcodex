@@ -33,6 +33,14 @@ function getAllConnectedClients(roomId) {
     );
 }
 
+// steps involved.
+//1) user connections : as someone try to connect we extract the socket.id and its username
+
+// 2) then we join that socket to its corresponding roomID.
+
+// 3) After joining the room ids we pass the all the clients info to that room
+
+
 io.on('connection', (socket) => {
     console.log('socket connected', socket.id);
 
@@ -49,6 +57,8 @@ io.on('connection', (socket) => {
         });
     });
 
+    // Here server responds the event that get triggered on codechange and share the code 
+    // with every other sockets connect to the corresponding roomID.
     socket.on(ACTIONS.CODE_CHANGE, ({ roomId, code }) => {
         socket.in(roomId).emit(ACTIONS.CODE_CHANGE, { code });
     });

@@ -52,6 +52,11 @@ const EditorPage = () => {
                 }
             );
 
+// steps involved are 
+// 1> we are getting that socket.id and username which is going to disconnect
+// 2> So in the frontend side we have to change the state by removing this id and username
+// 3> we have access to the prev state in the setClients function from this we will filter out
+//    the current id and name and return the new array.
             // Listening for disconnected
             socketRef.current.on(
                 ACTIONS.DISCONNECTED,
