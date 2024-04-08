@@ -134,8 +134,8 @@ const EditorPage = () => {
                 />
                 <div>
                      <center>
-                       <button className='btn'>Share Code</button>
-                       <button className='btn'> Compile Code</button>
+                       <button className='shareButton'>Share Code</button>
+                       <button className='CompileButton'> Compile Code</button>
                      </center>
                 </div>
             </div>
